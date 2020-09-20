@@ -1,36 +1,87 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-const Image = () => {
+export default (props) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+    headerLogo: file(
+      relativePath: {eq: "HeaderLogo.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 225, height: 18, quality: 100) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-  `)
+    carGroup: file(
+      relativePath: {eq: "car-group.png"}
+    ) {
+      childImageSharp {
+        fixed(quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    rangeRoverSmall: file(
+      relativePath: {eq: "2018-Range-Rover-Velgar.png"}
+    ) {
+      childImageSharp {
+        fixed(quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    miles: file(
+      relativePath: {eq: "MPG.png"}
+    ) {
+      childImageSharp {
+        fixed(width:57, height:22, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    horsepower: file(
+      relativePath: {eq: "HP.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 46, height: 20, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    acceleration: file(
+      relativePath: {eq: "0-60.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 55, height: 23, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    mapBackground: file(
+      relativePath: {eq: "map-screenshot.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 510, height: 308, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    delivery: file(
+      relativePath: {eq: "delivery.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 199, height: 430, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    }
+    `)
 
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>
+  return <div>
+    <Img style={props.style} fixed={data[`${props.imageName}`].childImageSharp.fixed} />
+  </div>
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-}
-
-export default Image
