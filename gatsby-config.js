@@ -20,6 +20,14 @@ module.exports = {
         path: `${__dirname}/public/static/fonts/`
       }
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ 
+        }
+      }
+    },
     `gatsby-image`,
     `gatsby-remark-images`,
     `gatsby-transformer-sharp`,

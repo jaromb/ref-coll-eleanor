@@ -9,7 +9,7 @@ export default (props) => {
       relativePath: {eq: "HeaderLogo.png"}
     ) {
       childImageSharp {
-        fixed(width: 225, height: 18, quality: 100) {
+        fixed(width: 225, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -73,6 +73,60 @@ export default (props) => {
     ) {
       childImageSharp {
         fixed(width: 199, height: 430, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    headOnPorscheSmall: file(
+      relativePath: {eq: "head-on-prch911-group.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 417, height: 518, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    yourVehiclePhone1: file(
+      relativePath: {eq: "your-vehicle-phone1.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 213, height: 458, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    pricing: file(
+      relativePath: {eq: "pricing.png"}
+    ) {
+      childImageSharp {
+        fixed(height: 142, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    insurance: file(
+      relativePath: {eq: "insurance.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 95, height: 128, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    maintenance: file(
+      relativePath: {eq: "maintenance.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 122, height: 122, quality:100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    touchedMobile: file(
+      relativePath: {eq: "touched-large.png"}
+    ) {
+      childImageSharp {
+        fixed(width: 284, quality:100) {
           ...GatsbyImageSharpFixed
         }
       }
