@@ -1,9 +1,10 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import { Row, Column, Stats } from "../styled.js"
-import leftArrow from "../../images/left-arrow.png"
-import rightArrow from "../../images/right-arrow.png"
+import { Row, Stats } from "../styled.js"
+import Oval from "../../images/assets/Oval.svg"
+import LeftArrow from "../../images/assets/left-arrow.svg"
+import RightArrow from "../../images/assets/right-arrow.svg"
 import Icon from "../../images/assets/logo-vector.svg"
 import Image from "../image"
 
@@ -21,6 +22,7 @@ const Desktop = props => (
           backgroundColor: "#fbc843"
         }}
       ></motion.div>
+
       <Image
         imageName="headerLogo"
         style={{
@@ -33,7 +35,7 @@ const Desktop = props => (
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: .8, delay: 0.5 }}
+        transition={{ ease: "easeOut", duration: 0.8, delay: 0.5 }}
         style={{ position: "absolute", top: "0px" }}
       >
         <h1
@@ -57,7 +59,7 @@ const Desktop = props => (
       <motion.div
         initial={{ y: -110, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: .8, delay: 0.6 }}
+        transition={{ ease: "easeOut", duration: 0.8, delay: 0.6 }}
         style={{ position: "absolute", top: "0px" }}
       >
         <Row
@@ -85,25 +87,25 @@ const Desktop = props => (
           >
             Available On the App
           </p>
-          <img
+          <RightArrow
             style={{
               position: "absolute",
               right: "0%",
               top: "calc(50% - 11.31px/2)",
               width: "28.66px",
               height: "11.31px",
-              color: "#414A69"
+              color: "#414A69",
+              cursor: "pointer"
             }}
             onClick={null}
-            src={rightArrow}
-          ></img>
+          />
         </Row>
       </motion.div>
-        <div>
+      <div>
         <Image
-          initial={{x: 200, opacity: 0}}
-          animate={{x: 0, opacity: 1}}
-          transition={{ease: "easeOut", duration: .8, delay: .5}}
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 0.8, delay: 0.5 }}
           imageName="yourVehiclePhone2Large"
           style={{
             position: "absolute",
@@ -113,194 +115,203 @@ const Desktop = props => (
             top: "108.57px"
           }}
         />
-        </div>
-        <Image
-          initial={{ x: -1000 }}
-          animate={{ x: 0 }}
-          transition={{ ease: "easeOut", duration: .8, delay: .2 }}
-          style={{ width: "996px", position: "absolute", top: "585px" }}
-          imageName="carGroupLarge"
-        ></Image>
+      </div>
+      <Image
+        initial={{ x: -1000 }}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut", duration: 0.8, delay: 0.2 }}
+        style={{ width: "996px", position: "absolute", top: "585px" }}
+        imageName="carGroupLarge"
+      ></Image>
     </div>
-    {/* <div id="section-two">
-              <h1
-                style={{
-                  position: "absolute",
-                  width: "328px",
-                  height: "96px",
-                  left: "20px",
-                  top: "509px",
-                  fontSize: "45px",
-                  fontWeight: 300,
-                  lineHeight: "48px",
-                  letterSpacing: "-0.217059px",
-                  color: "#2B3144"
-                }}
-              >
-                SELECT A VEHICLE FROM YOUR PHONE.
-              </h1>
-              <p
-                style={{
-                  position: "absolute",
-                  width: "375px",
-                  height: "78px",
-                  left: "19px",
-                  top: "614px",
-                  fontSize: "16px",
-                  lineHeight: "26px",
-                  letterSpacing: "-0.470588px",
-                  color: "#000000"
-                }}
-              >
-                Select from a wide range of luxury vehicles in our inventory.
-                Drive it for a month, trade it the next for something else you
-                have always wanted to own.
-              </p>
-              <div>
-                <div
-                  style={{
-                    position: "absolute",
-                    width: "374px",
-                    height: "340px",
-                    left: "20px",
-                    top: "715px",
-                    background: "#FBC843"
-                  }}
-                ></div>
-                <Row>
-                  <h2
-                    style={{
-                      position: "absolute",
-                      width: "auto",
-                      height: "40px",
-                      left: "50px",
-                      top: "753px",
-                      fontSize: "40px",
-                      lineHeight: "47px",
-                      color: "black"
-                    }}
-                  >
-                    {props.vehicles[props.vehicleIndex].vehicleMake}
-                  </h2>
-                  <h3
-                    style={{
-                      position: "absolute",
-                      width: "auto",
-                      height: "20px",
-                      left: "50px",
-                      top: "797px",
-                      fontStyle: "normal",
-                      fontWeight: "normal",
-                      fontSize: "17px",
-                      lineHeight: "20px",
-                      color: "#4B5168"
-                    }}
-                  >
-                    {props.vehicles[props.vehicleIndex].vehicleModel}
-                  </h3>
-                  <img
-                    src={leftArrow}
-                    onClick={() =>
-                      props.vehicleIndex !== 0
-                        ? props.setVehicleIndex(props.vehicleIndex - 1)
-                        : props.setVehicleIndex(props.vehicles.length - 1)
-                    }
-                    style={{
-                      position: "absolute",
-                      width: "29px",
-                      height: "11px",
-                      left: "266px",
-                      top: "767px",
-                      color: "#414A69"
-                    }}
-                  />
-                  <img
-                    src={rightArrow}
-                    onClick={() =>
-                      props.vehicles[props.vehicleIndex + 1]
-                        ? props.setVehicleIndex(props.vehicleIndex + 1)
-                        : props.setVehicleIndex(0)
-                    }
-                    style={{
-                      position: "absolute",
-                      width: "29px",
-                      height: "11px",
-                      left: "316px",
-                      top: "767px",
-                      color: "#414A69"
-                    }}
-                  />
-                </Row>
-                <Row>
-                  <Image
-                    imageName="miles"
-                    style={{
-                      position: "absolute",
-                      width: "57px",
-                      height: "22px",
-                      left: "50px",
-                      top: "853px"
-                    }}
-                  />
-                  <Stats style={{ left: "136px", top: "846px" }}>
-                    {props.vehicles[props.vehicleIndex].miles}
-                  </Stats>
-                </Row>
-                <Row>
-                  <Image
-                    imageName="horsepower"
-                    style={{
-                      position: "absolute",
-                      width: "46px",
-                      height: "20px",
-                      left: "51px",
-                      top: "906px"
-                    }}
-                  />
-                  <Stats style={{ left: "136px", top: "898px" }}>
-                    {props.vehicles[props.vehicleIndex].horsepower}
-                  </Stats>
-                </Row>
-                <Row>
-                  <Image
-                    imageName="acceleration"
-                    style={{
-                      position: "absolute",
-                      width: "55px",
-                      height: "23px",
-                      left: "53px",
-                      top: "957px"
-                    }}
-                  />
-                  <Stats style={{ left: "136px", top: "950px" }}>
-                    {props.vehicles[props.vehicleIndex].acceleration}
-                  </Stats>
-                </Row>
-              </div>
-              <div style={{position: "absolute", 
-                  top: "988px", display: "flex", alignItems: "flex-end", height: "149px", width: "388px"}}>
-              <Image
-                style={{
-                  position: "relative",
-                  left: "11px",
-                }}
-                imageName={props.vehicles[props.vehicleIndex].imageName}
-              />
-              </div>
-            </div> */}
+    <div id="section-two">
+      <h1
+        style={{
+          position: "absolute",
+          width: "546px",
+          height: "196px",
+          left: "786px",
+          top: "1199px",
+          fontSize: "95px",
+          fontWeight: 300,
+          lineHeight: "98px",
+          letterSpacing: "-0.458235px",
+          color: "#2B3144"
+        }}
+      >
+        SELECT A VEHICLE FROM YOUR PHONE.
+      </h1>
+      <p
+        style={{
+          position: "absolute",
+          width: "456px",
+          height: "78px",
+          left: "789px",
+          top: "1422px",
+          fontSize: "16px",
+          lineHeight: "26px",
+          letterSpacing: "-0.470588px",
+          color: "#000000"
+        }}
+      >
+        Select from a wide range of luxury vehicles in our inventory. Drive it
+        for a month, trade it the next for something else you have always wanted
+        to own.
+      </p>
+      <div>
+        <div
+          style={{
+            position: "absolute",
+            width: "524px",
+            height: "661px",
+            left: "101px",
+            top: "1078px",
+            background: "#FBC843"
+          }}
+        ></div>
+        <Row>
+          <h2
+            style={{
+              position: "absolute",
+              width: "238px",
+              height: "64px",
+              left: "230px",
+              top: "1259px",
+              fontSize: "64px",
+              fontWeight: 300,
+              lineHeight: "75px",
+              color: "black"
+            }}
+          >
+            {props.vehicles[props.vehicleIndex].vehicleMake}
+          </h2>
+          <h3
+            style={{
+              position: "absolute",
+              width: "142px",
+              height: "20px",
+              left: "230px",
+              top: "1326px",
+              fontStyle: "normal",
+              fontWeight: "normal",
+              fontSize: "17px",
+              lineHeight: "20px",
+              color: "#4B5168"
+            }}
+          >
+            {props.vehicles[props.vehicleIndex].vehicleModel}
+          </h3>
+          <LeftArrow
+            onClick={() =>
+              props.vehicleIndex !== 0
+                ? props.setVehicleIndex(props.vehicleIndex - 1)
+                : props.setVehicleIndex(props.vehicles.length - 1)
+            }
+            style={{
+              position: "absolute",
+              width: "29px",
+              height: "11px",
+              left: "501.5px",
+              top: "1123px",
+              color: "#414A69",
+              cursor: "pointer"
+            }}
+          />
+          <RightArrow
+            onClick={() =>
+              props.vehicles[props.vehicleIndex + 1]
+                ? props.setVehicleIndex(props.vehicleIndex + 1)
+                : props.setVehicleIndex(0)
+            }
+            style={{
+              position: "absolute",
+              width: "29px",
+              height: "11px",
+              left: "551.5px",
+              top: "1123px",
+              color: "#414A69",
+              cursor: "pointer"
+            }}
+          />
+        </Row>
+        <Row>
+          <Image
+            imageName="miles"
+            style={{
+              position: "absolute",
+              width: "57px",
+              height: "22px",
+              left: "229.5px",
+              top: "1415px"
+            }}
+          />
+          <Stats style={{ left: "316px", top: "1408px" }}>
+            {props.vehicles[props.vehicleIndex].miles}
+          </Stats>
+        </Row>
+        <Row>
+          <Image
+            imageName="horsepower"
+            style={{
+              position: "absolute",
+              width: "46px",
+              height: "20px",
+              left: "231px",
+              top: "1468px"
+            }}
+          />
+          <Stats style={{ left: "316px", top: "1460px" }}>
+            {props.vehicles[props.vehicleIndex].horsepower}
+          </Stats>
+        </Row>
+        <Row>
+          <Image
+            imageName="acceleration"
+            style={{
+              position: "absolute",
+              width: "55px",
+              height: "23px",
+              left: "233px",
+              top: "1519px"
+            }}
+          />
+          <Stats style={{ left: "316px", top: "1512px" }}>
+            {props.vehicles[props.vehicleIndex].acceleration}
+          </Stats>
+        </Row>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: "1547px",
+          display: "flex",
+          alignItems: "flex-end",
+          height: "276px",
+          width: "718px"
+        }}
+      >
+        <Image
+          style={{
+            position: "relative",
+            left: "192px"
+          }}
+          imageName={props.vehicles[props.vehicleIndex].imageName}
+        />
+      </div>
+    </div>
     <div id="section-three">
       <div>
         <h1
           style={{
             position: "absolute",
-            width: "auto",
-            height: "48px",
-            left: "20px",
-            top: "1251px",
-            fontSize: "45px",
+            width: "546px",
+            height: "196px",
+            left: "101px",
+            top: "2176px",
+            fontSize: "95px",
             fontWeight: 300,
-            lineHeight: "48px",
-            letterSpacing: "-0.217059px",
+            lineHeight: "98px",
+            letterSpacing: "-0.458235px",
             color: "#2B3144"
           }}
         >
@@ -309,10 +320,10 @@ const Desktop = props => (
         <p
           style={{
             position: "absolute",
-            width: "375px",
+            width: "338px",
             height: "78px",
-            left: "19px",
-            top: "1308px",
+            left: "101px",
+            top: "2399px",
             fontSize: "16px",
             lineHeight: "26px",
             letterSpacing: "-0.470588px",
@@ -325,25 +336,87 @@ const Desktop = props => (
       </div>
       <div id="map">
         <Image
-          imageName="mapBackground"
+          imageName="mapBackgroundLarge"
           style={{
             position: "absolute",
-            width: "510px",
-            height: "308.08px",
-            left: "-88px",
-            top: "1468.65px",
-            backgroundImage: "true"
+            width: "849px",
+            // height: "730px",
+            left: "650px",
+            top: "2100px",
+            backgroundImage: "true",
+            zIndex: 0
           }}
         />
+        <div id="map-illustrations">
+          <Image
+            imageName="deliveryMarkerLarge"
+            style={{
+              position: "absolute",
+              width: "49px",
+              height: "104px",
+              left: "1376px",
+              top: "2173px",
+              zIndex: 2
+            }}
+          />
+          <Image
+            imageName="path4Large"
+            style={{
+              position: "absolute",
+              width: "544px",
+              height: "101px",
+              left: "854px",
+              top: "2171px",
+              zIndex: 1
+            }}
+          />
+          <Image
+            imageName="homeMarkerLarge"
+            style={{
+              position: "absolute",
+              width: "26px",
+              height: "26px",
+              left: "842px",
+              top: "2200px",
+              zIndex: 2
+            }}
+          />
+        </div>
         <Image
           imageName="delivery"
           style={{
             position: "absolute",
-            width: "198.6px",
-            height: "429.98px",
-            left: "116px",
-            top: "1408px",
-            backgroundImage: "true"
+            width: "331px",
+            height: "716px",
+            left: "990px",
+            top: "1999px",
+            zIndex: 4
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            width: "320px",
+            height: "700px",
+            left: "953px",
+            top: "2045px",
+            background: "#000000",
+            mixBlendMode: "normal",
+            opacity: "0.24",
+            filter: "blur(111.45px)",
+            borderRadius: "4px",
+            zIndex: 3
+          }}
+        ></div>
+        <Image
+          imageName="porscheDelivery"
+          style={{
+            position: "absolute",
+            width: "499px",
+            height: "143px",
+            left: "429px",
+            top: "2502px",
+            transform: "scaleX(-1)"
           }}
         />
       </div>
@@ -353,14 +426,14 @@ const Desktop = props => (
         <h1
           style={{
             position: "absolute",
-            width: "258px",
-            height: "96px",
-            left: "20px",
-            top: "1979px",
-            fontSize: "45px",
+            width: "544px",
+            height: "196px",
+            left: "826px",
+            top: "3206px",
+            fontSize: "95px",
             fontWeight: 300,
-            lineHeight: "48px",
-            letterSpacing: "-0.217059px",
+            lineHeight: "98px",
+            letterSpacing: "-0.458235px",
             color: "#2B3144"
           }}
         >
@@ -369,10 +442,10 @@ const Desktop = props => (
         <p
           style={{
             position: "absolute",
-            width: "375px",
+            width: "397px",
             height: "78px",
-            left: "19px",
-            top: "2085px",
+            left: "826px",
+            top: "3429px",
             fontSize: "16px",
             lineHeight: "26px",
             letterSpacing: "-0.470588px",
@@ -382,46 +455,52 @@ const Desktop = props => (
           Use Eleanor Trade-In Credits to trade in your vehicle for something
           else in our luxurious inventory. Nothing says “June” like a new car!
         </p>
-
-        {/* <div style={{position: "absolute", width: "307.51px", height: "518px", left: "-6.08px", top: "2188px", background: "#FBC843"}}>
-              </div> */}
-        <Image
-          imageName="headOnPorscheSmall"
+        <div
           style={{
             position: "absolute",
-            width: "417.15px",
-            height: "518px",
-            left: "-6.08px",
-            top: "2188px",
+            width: "488px",
+            height: "823px",
+            left: "100px",
+            top: "2930px",
+            background: "#FBC843",
             zIndex: 0
+          }}
+        ></div>
+        <Image
+          imageName="headOnPorscheLarge"
+          style={{
+            position: "absolute",
+            left: "110px",
+            top: "3218px",
+            zIndex: 1
+          }}
+        />
+        <Image
+          imageName="yourVehiclePhone1"
+          style={{
+            position: "absolute",
+            width: "338px",
+            height: "725px",
+            left: "392px",
+            top: "2982px",
+            zIndex: 3
           }}
         />
         <div
           style={{
             position: "absolute",
-            width: "201.94px",
-            height: "441.73px",
-            left: "216.06px",
-            top: "2249.27px",
+            width: "320px",
+            height: "700px",
+            left: "453px",
+            top: "3029px",
             background: "#000000",
             mixBlendMode: "normal",
             opacity: "0.22",
-            filter: "blur(70.3302px)",
-            borderRadius: "22.0867px",
-            zIndex: 1
-          }}
-        ></div>
-        <Image
-          imageName="yourVehiclePhone1"
-          style={{
-            position: "absolute",
-            width: "213.29px",
-            height: "457.51px",
-            left: "177.57px",
-            top: "2219.61px",
+            filter: "blur(111.45px)",
+            borderRadius: "35px",
             zIndex: 2
           }}
-        />
+        ></div>
       </div>
     </div>
     <div id="section-five">
@@ -431,8 +510,8 @@ const Desktop = props => (
           width: "453px",
           height: "453px",
           position: "absolute",
-          top: "2805px",
-          left: "-19.5px",
+          top: "3963px",
+          left: "101px",
           background: "#F5F5F7",
           display: "flex",
           alignItems: "center"
@@ -440,14 +519,14 @@ const Desktop = props => (
       >
         <Image
           imageName="pricing"
-          style={{ position: "absolute", left: "180px", top: "95px" }}
+          style={{ position: "absolute", left: "170px", top: "95px" }}
         />
         <h1
           style={{
             position: "absolute",
             height: "88px",
-            left: "21.63%",
-            top: "calc(50% - 88px/2 + 66.5px",
+            left: "98px",
+            top: "249px",
             fontSize: "34px",
             fontWeight: "300",
             lineHeight: "88px",
@@ -462,9 +541,8 @@ const Desktop = props => (
             position: "absolute",
             width: "258px",
             height: "42px",
-            left: "21.63%",
-            top: "71.74%",
-            bottom: "18.98%",
+            left: "98px",
+            top: "325px",
             fontSize: "14px",
             lineHeight: "21px",
             letterSpacing: "-0.411765px",
@@ -480,8 +558,8 @@ const Desktop = props => (
           width: "453px",
           height: "453px",
           position: "absolute",
-          top: "3268px",
-          left: "-19.5px",
+          top: "3963px",
+          left: "574px",
           background: "#F5F5F7"
         }}
       >
@@ -491,19 +569,22 @@ const Desktop = props => (
             position: "absolute",
             width: "95px",
             height: "128px",
-            left: "190px",
-            top: "95px"
+            left: "179px",
+            top: "87px"
           }}
+        />
+        <Oval
+          style={{ position: "absolute", left: "187.79px", top: "227px" }}
         />
         <h1
           style={{
             position: "absolute",
             width: "306px",
             height: "88px",
-            left: "18%",
-            top: "calc(50% - 88px/2 + 66.5px",
+            left: "74px",
+            top: "249px",
             fontSize: "34px",
-            fontWeight: "300",
+            fontWeight: 300,
             lineHeight: "88px",
             letterSpacing: "-0.164px",
             color: "#2B3144"
@@ -515,9 +596,8 @@ const Desktop = props => (
           style={{
             position: "absolute",
             width: "316px",
-            left: "18%",
-            top: "71.74%",
-            bottom: "18.98%",
+            left: "74px",
+            top: "325px",
             fontSize: "14px",
             lineHeight: "21px",
             letterSpacing: "-0.411765px",
@@ -534,8 +614,8 @@ const Desktop = props => (
           width: "453px",
           height: "453px",
           position: "absolute",
-          top: "3731px",
-          left: "-19.5px",
+          top: "3963px",
+          left: "1047px",
           background: "#F5F5F7"
         }}
       >
@@ -545,18 +625,20 @@ const Desktop = props => (
             position: "absolute",
             width: "122px",
             height: "122px",
-            left: "39%",
-            top: "95px"
+            left: "163px",
+            top: "91px"
           }}
+        />
+        <Oval
+          style={{ position: "absolute", left: "192.79px", top: "225.6px" }}
         />
         <h1
           style={{
             position: "absolute",
             width: "266px",
             height: "88px",
-            left: "21.63%",
-            right: "21.19%",
-            top: "calc(50% - 88px/2 + 66.5px",
+            left: "98px",
+            top: "249px",
             fontSize: "34px",
             fontWeight: 300,
             lineHeight: "88px",
@@ -571,9 +653,8 @@ const Desktop = props => (
             position: "absolute",
             width: "273px",
             height: "42px",
-            left: "21.63%",
-            right: "21.41%",
-            top: "71.74%",
+            left: "98px",
+            top: "325px",
             fontSize: "14px",
             lineHeight: "21px",
             letterSpacing: "-0.411765px",
@@ -589,14 +670,14 @@ const Desktop = props => (
       <h1
         style={{
           position: "absolute",
-          width: "375px",
-          height: "96px",
-          left: "20px",
-          top: "4251px",
-          fontSize: "45px",
+          width: "608px",
+          height: "176px",
+          left: "836px",
+          top: "4737px",
+          fontSize: "93px",
           fontWeight: 300,
-          lineHeight: "48px",
-          letterSpacing: "-.217059px",
+          lineHeight: "88px",
+          letterSpacing: "-.448588px",
           color: "#2B3144"
         }}
       >
@@ -605,10 +686,10 @@ const Desktop = props => (
       <p
         style={{
           position: "absolute",
-          width: "370px",
-          height: "78px",
-          left: "24px",
-          top: "4357px",
+          width: "397px",
+          height: "52px",
+          left: "840px",
+          top: "4948px",
           fontSize: "16px",
           lineHeight: "26px",
           letterSpacing: "-0.470588px",
@@ -623,8 +704,8 @@ const Desktop = props => (
           position: "absolute",
           width: "187px",
           height: "26px",
-          left: "27px",
-          top: "4440px",
+          left: "843px",
+          top: "5019px",
           fontSize: "12px",
           fontWeight: 900,
           lineHeight: "26px",
@@ -632,24 +713,24 @@ const Desktop = props => (
           color: "#000000"
         }}
       >
-        Alex Bateman, Interface Designer
+        Alex Bateman, &nbsp; Interface Designer
       </p>
       <hr
         style={{
           position: "absolute",
-          width: "374px",
+          width: "608px",
           height: "4px",
-          left: "20px",
-          top: "4487px",
+          left: "836px",
+          top: "5086px",
           color: "#F4F4F5"
         }}
       ></hr>
       <p
         style={{
           position: "absolute",
-          height: "100px",
-          left: "20px",
-          top: "4500px",
+          height: "108px",
+          left: "836px",
+          top: "5131px",
           fontSize: "16px",
           fontWeight: 900,
           lineHeight: "54px",
@@ -659,46 +740,56 @@ const Desktop = props => (
       >
         Available On the App
       </p>
-      <img
+      <RightArrow
         style={{
           position: "absolute",
-          top: "4522px",
-          left: "223.34px",
+          top: "5153px",
+          left: "1053.77px",
           width: "28.66px",
           height: "11.31px",
-          color: "#414A69"
+          color: "#414A69",
+          cursor: "pointer"
         }}
         onClick={null}
-        src={rightArrow}
-      ></img>
+      />
       <div
         style={{
           position: "absolute",
-          width: "414px",
-          height: "469px",
-          left: "0px",
-          top: "4564px",
+          width: "637px",
+          height: "722px",
+          left: "101px",
+          top: "4646px",
           background: "#FBC843"
         }}
       ></div>
       <Image
-        imageName="touchedMobile"
+        imageName="touchedMobileLarge"
         style={{
           position: "absolute",
-          width: "284.02px",
-          height: "400.79px",
-          left: "64.99px",
-          top: "4632.21px"
+          width: "437px",
+          height: "617px",
+          left: "181px",
+          top: "4751px"
+        }}
+      />
+      <Image
+        imageName="car1"
+        style={{
+          position: "absolute",
+          height: "237px",
+          left: "283px",
+          top: "5250px"
         }}
       />
     </div>
+    
     <hr
       style={{
         position: "absolute",
-        width: "374px",
+        width: "1399px",
         height: "1px",
-        left: "20px",
-        top: "5093px",
+        left: "101px",
+        top: "5564px",
         background: "#F4F4F5"
       }}
     ></hr>
@@ -707,11 +798,47 @@ const Desktop = props => (
         position: "absolute",
         width: "157px",
         height: "13px",
-        left: "21px",
-        top: "5124px",
-        marginBottom: "45px"
+        left: "101px",
+        top: "5595px",
+        marginBottom: "118px"
       }}
     />
+    <p
+      style={{
+        position: "absolute",
+        height: "15px",
+        top: "5602px",
+        left: "1238px",
+        fontSize: "11px",
+        lineHeight: "13px",
+        letterSpacing: "-.323529px",
+        color: "#4F5874"
+      }}
+    >About Us</p>
+    <p
+      style={{
+        position: "absolute",
+        height: "15px",
+        top: "5602px",
+        left: "1348px",
+        fontSize: "11px",
+        lineHeight: "13px",
+        letterSpacing: "-.323529px",
+        color: "#4F5874"
+      }}
+    >Terms of Use</p>
+    <p
+      style={{
+        position: "absolute",
+        height: "15px",
+        top: "5602px",
+        left: "1478px",
+        fontSize: "11px",
+        lineHeight: "13px",
+        letterSpacing: "-.323529px",
+        color: "#4F5874"
+      }}
+    >FAQ</p>
   </div>
 )
 

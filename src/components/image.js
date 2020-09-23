@@ -1,13 +1,9 @@
 import React from "react"
-import styled from "styled-components"
 import { motion } from "framer-motion"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 export default props => {
-  const MotionImage = styled(motion.custom(Img))`
-    
-  `
   const data = useStaticQuery(graphql`
     query {
       headerLogo: file(relativePath: { eq: "HeaderLogo.png" }) {
@@ -33,7 +29,7 @@ export default props => {
       }
       rangeRover: file(relativePath: { eq: "2018-Range-Rover-Velgar.png" }) {
         childImageSharp {
-          fixed(quality: 100) {
+          fixed(width: 718, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -49,7 +45,14 @@ export default props => {
       }
       porscheModel: file(relativePath: { eq: "porsche-model-large.png" }) {
         childImageSharp {
-          fixed(quality: 100) {
+          fixed(width: 718, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      porscheDelivery: file(relativePath: { eq: "porsche-model-large.png" }) {
+        childImageSharp {
+          fixed(width: 499, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -65,28 +68,77 @@ export default props => {
       }
       miles: file(relativePath: { eq: "MPG.png" }) {
         childImageSharp {
-          fixed(width: 57, height: 22, quality: 100) {
+          fixed(width: 57, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       horsepower: file(relativePath: { eq: "HP.png" }) {
         childImageSharp {
-          fixed(width: 46, height: 20, quality: 100) {
+          fixed(width: 46, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       acceleration: file(relativePath: { eq: "0-60.png" }) {
         childImageSharp {
-          fixed(width: 55, height: 23, quality: 100) {
+          fixed(width: 55, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       mapBackground: file(relativePath: { eq: "map-screenshot.png" }) {
         childImageSharp {
-          fixed(width: 510, height: 308, quality: 100) {
+          fixed(height: 308, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      deliveryMarkerSmall: file(relativePath: { eq: "map-marker.png" }) {
+        childImageSharp {
+          fixed(width: 29, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      path4Small: file(relativePath: { eq: "path4.png" }) {
+        childImageSharp {
+          fixed(width: 326, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      homeMarkerSmall: file(relativePath: { eq: "home-marker.png" }) {
+        childImageSharp {
+          fixed(width: 16, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      mapBackgroundLarge: file(relativePath: { eq: "map-large.png" }) {
+        childImageSharp {
+          fixed(width: 849, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      deliveryMarkerLarge: file(relativePath: { eq: "map-marker.png" }) {
+        childImageSharp {
+          fixed(width: 48, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      path4Large: file(relativePath: { eq: "path4.png" }) {
+        childImageSharp {
+          fixed(width: 544, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      homeMarkerLarge: file(relativePath: { eq: "home-marker.png" }) {
+        childImageSharp {
+          fixed(width: 26, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -102,7 +154,16 @@ export default props => {
         relativePath: { eq: "head-on-prch911-group.png" }
       ) {
         childImageSharp {
-          fixed(width: 417, height: 518, quality: 100) {
+          fixed(width: 417, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      headOnPorscheLarge: file(
+        relativePath: { eq: "head-on-PRCH911-small.png" }
+      ) {
+        childImageSharp {
+          fixed(height: 283, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -110,6 +171,13 @@ export default props => {
       yourVehiclePhone1: file(relativePath: { eq: "your-vehicle-phone1.png" }) {
         childImageSharp {
           fixed(width: 213, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      yourVehiclePhone1Large: file(relativePath: { eq: "your-vehicle-phone1.png" }) {
+        childImageSharp {
+          fixed(width: 338, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -125,7 +193,7 @@ export default props => {
       }
       pricing: file(relativePath: { eq: "pricing.png" }) {
         childImageSharp {
-          fixed(height: 142, quality: 100) {
+          fixed(width: 114, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -147,6 +215,20 @@ export default props => {
       touchedMobile: file(relativePath: { eq: "touched-large.png" }) {
         childImageSharp {
           fixed(width: 284, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      touchedMobileLarge: file(relativePath: { eq: "touched-large.png" }) {
+        childImageSharp {
+          fixed(width: 437, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      car1: file(relativePath: { eq: "car1.png" }) {
+        childImageSharp {
+          fixed(height: 237, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { motion, useViewportScroll } from "framer-motion"
 
-import { Row, Column, Stats } from "../styled.js"
-import leftArrow from "../../images/left-arrow.png"
-import rightArrow from "../../images/right-arrow.png"
+import { Row, Stats } from "../styled.js"
+import Oval from "../../images/assets/Oval.svg"
+import LeftArrow from "../../images/assets/left-arrow.svg"
+import RightArrow from "../../images/assets/right-arrow.svg"
 import Icon from "../../images/assets/logo-vector.svg"
 import Image from "../image"
 
@@ -17,7 +18,6 @@ const Mobile = props => {
 
 
     const updateScrollProgress = () => {
-      let scrollPosition = scrollY.current
         if (scrollY.current > scrollProgress) {
       setScrollProgress(scrollY.current)
         }
@@ -98,7 +98,7 @@ const Mobile = props => {
             >
               Available On the App
             </p>
-            <img
+            <RightArrow
               style={{
                 position: "absolute",
                 right: "0%",
@@ -108,8 +108,7 @@ const Mobile = props => {
                 color: "#414A69"
               }}
               onClick={null}
-              src={rightArrow}
-            ></img>
+            />
           </Row>
         </motion.div>
         <motion.div 
@@ -203,8 +202,7 @@ const Mobile = props => {
             >
               {props.vehicles[props.vehicleIndex].vehicleModel}
             </h3>
-            <img
-              src={leftArrow}
+            <LeftArrow
               onClick={() =>
                 props.vehicleIndex !== 0
                   ? props.setVehicleIndex(props.vehicleIndex - 1)
@@ -219,8 +217,7 @@ const Mobile = props => {
                 color: "#414A69"
               }}
             />
-            <img
-              src={rightArrow}
+            <RightArrow
               onClick={() =>
                 props.vehicles[props.vehicleIndex + 1]
                   ? props.setVehicleIndex(props.vehicleIndex + 1)
@@ -343,13 +340,47 @@ const Mobile = props => {
             imageName="mapBackground"
             style={{
               position: "absolute",
-              width: "510px",
               height: "308.08px",
-              left: "-88px",
+              left: "0px",
               top: "1468.65px",
-              backgroundImage: "true"
+              zIndex: 0
             }}
           />
+          <div id="map-illustrations">
+          <Image
+            imageName="deliveryMarkerSmall"
+            style={{
+              position: "absolute",
+              width: "29.4px",
+              height: "62.46px",
+              left: "349px",
+              top: "1514px",
+              zIndex: 2
+            }}
+            />
+          <Image
+            imageName="path4Small"
+            style={{
+              position: "absolute",
+              width: "326.4px",
+              height: "60.65px",
+              left: "35px",
+              top: "1512.49px",
+              zIndex: 1
+            }}
+            />
+          <Image
+            imageName="homeMarkerSmall"
+            style={{
+              position: "absolute",
+              width: "15.6px",
+              height: "15.61px",
+              left: "28px",
+              top: "1528.71px",
+              zIndex: 2
+            }}
+          />
+        </div>
           <Image
             imageName="delivery"
             style={{
@@ -358,9 +389,24 @@ const Mobile = props => {
               height: "429.98px",
               left: "116px",
               top: "1408px",
-              backgroundImage: "true"
+              zIndex: 2
             }}
           />
+          <div
+          style={{
+            position: "absolute",
+            width: "192px",
+            height: "420.38px",
+            left: "93.8px",
+            top: "1435.62px",
+            background: "#000000",
+            mixBlendMode: "normal",
+            opacity: "0.24",
+            filter: "blur(66.8697px)",
+            borderRadius: "2.4px",
+            zIndex: 1
+          }}
+        ></div>
         </div>
       </div>
       
@@ -444,11 +490,11 @@ const Mobile = props => {
         <div
           id="pricing"
           style={{
-            width: "453px",
+            width: "414px",
             height: "453px",
             position: "absolute",
             top: "2805px",
-            left: "-19.5px",
+            left: "0px",
             background: "#F5F5F7",
             display: "flex",
             alignItems: "center"
@@ -456,14 +502,14 @@ const Mobile = props => {
         >
           <Image
             imageName="pricing"
-            style={{ position: "absolute", left: "180px", top: "95px" }}
+            style={{ position: "absolute", left: "150px", top: "95px" }}
           />
           <h1
             style={{
               position: "absolute",
               height: "88px",
-              left: "21.63%",
-              top: "calc(50% - 88px/2 + 66.5px",
+              left: "78px",
+              top: "249px",
               fontSize: "34px",
               fontWeight: "300",
               lineHeight: "88px",
@@ -478,9 +524,8 @@ const Mobile = props => {
               position: "absolute",
               width: "258px",
               height: "42px",
-              left: "21.63%",
-              top: "71.74%",
-              bottom: "18.98%",
+              left: "78px",
+              top: "325px",
               fontSize: "14px",
               lineHeight: "21px",
               letterSpacing: "-0.411765px",
@@ -493,11 +538,11 @@ const Mobile = props => {
         <div
           id="insurance"
           style={{
-            width: "453px",
+            width: "414px",
             height: "453px",
             position: "absolute",
             top: "3268px",
-            left: "-19.5px",
+            left: "0px",
             background: "#F5F5F7"
           }}
         >
@@ -507,17 +552,20 @@ const Mobile = props => {
               position: "absolute",
               width: "95px",
               height: "128px",
-              left: "190px",
-              top: "95px"
+              left: "160px",
+              top: "87px"
             }}
+          />
+          <Oval 
+            style={{position: "absolute", left: "167px", top: "227px" }}
           />
           <h1
             style={{
               position: "absolute",
               width: "306px",
               height: "88px",
-              left: "18%",
-              top: "calc(50% - 88px/2 + 66.5px",
+              left: "54px",
+              top: "249px",
               fontSize: "34px",
               fontWeight: "300",
               lineHeight: "88px",
@@ -531,9 +579,8 @@ const Mobile = props => {
             style={{
               position: "absolute",
               width: "316px",
-              left: "18%",
-              top: "71.74%",
-              bottom: "18.98%",
+              left: "54px",
+              top: "325px",
               fontSize: "14px",
               lineHeight: "21px",
               letterSpacing: "-0.411765px",
@@ -547,11 +594,11 @@ const Mobile = props => {
         <div
           id="maintenance"
           style={{
-            width: "453px",
+            width: "414px",
             height: "453px",
             position: "absolute",
             top: "3731px",
-            left: "-19.5px",
+            left: "0px",
             background: "#F5F5F7"
           }}
         >
@@ -561,18 +608,18 @@ const Mobile = props => {
               position: "absolute",
               width: "122px",
               height: "122px",
-              left: "39%",
+              left: "143px",
               top: "95px"
             }}
           />
+          <Oval style={{position: "absolute", top: "225.6px", left: "167px"}}/>
           <h1
             style={{
               position: "absolute",
               width: "266px",
               height: "88px",
-              left: "21.63%",
-              right: "21.19%",
-              top: "calc(50% - 88px/2 + 66.5px",
+              left: "78px",
+              top: "249px",
               fontSize: "34px",
               fontWeight: 300,
               lineHeight: "88px",
@@ -587,9 +634,8 @@ const Mobile = props => {
               position: "absolute",
               width: "273px",
               height: "42px",
-              left: "21.63%",
-              right: "21.41%",
-              top: "71.74%",
+              left: "78px",
+              top: "325px",
               fontSize: "14px",
               lineHeight: "21px",
               letterSpacing: "-0.411765px",
@@ -648,7 +694,7 @@ const Mobile = props => {
             color: "#000000"
           }}
         >
-          Alex Bateman, Interface Designer
+          Alex Bateman, &nbsp; Interface Designer
         </p>
         <hr
           style={{
@@ -675,7 +721,7 @@ const Mobile = props => {
         >
           Available On the App
         </p>
-        <img
+        <RightArrow
           style={{
             position: "absolute",
             top: "4522px",
@@ -685,8 +731,7 @@ const Mobile = props => {
             color: "#414A69"
           }}
           onClick={null}
-          src={rightArrow}
-        ></img>
+        />
         <div
           style={{
             position: "absolute",
