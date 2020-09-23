@@ -267,14 +267,4 @@ export default props => {
   )
 }
 
-// export const MotionImage = props => {
-//   return (
-//     <MotionImageStyle
-//       initial={props.initial}
-//       animate={props.animate}
-//       transition={props.transition}
-//       style={props.style}
-//       imageName={props.imageName}
-//     />
-//   )
-// }
+
