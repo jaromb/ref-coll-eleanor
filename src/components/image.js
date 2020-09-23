@@ -58,8 +58,7 @@ export default props => {
         }
       }
       porscheModelMobile: file(
-        relativePath: { eq: "porsche-model-large.png" }
-      ) {
+        relativePath: { eq: "porsche-model-large.png" }) {
         childImageSharp {
           fixed(width: 388, quality: 100) {
             ...GatsbyImageSharpFixed

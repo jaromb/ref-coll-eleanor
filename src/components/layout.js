@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Image, { query } from "./image.js"
+import Image from "./image.js"
 
 // import Header from "./header"
 import "./layout.css"

@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
   const [windowWidth, setWindowWidth] = useState(0)
-  const [vehicleIndex, setVehicleIndex] = useState(0)
+  const [[vehicleIndex, clicked], setVehicleIndex] = useState([0, false])
   const [loading, setLoading] = useState(true)
 
   const [vehicles, setVehicles] = useState([
@@ -66,6 +66,7 @@ const IndexPage = () => {
             />
           ) : (
             <Desktop
+              clicked={clicked}
               vehicleIndex={vehicleIndex}
               vehicles={vehicles}
               setVehicleIndex={setVehicleIndex}

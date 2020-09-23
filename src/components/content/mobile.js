@@ -10,8 +10,8 @@ import Image from "../image"
 
 const Mobile = props => {
   const mobileName = props.vehicles[props.vehicleIndex].imageName + "Mobile"
+  
   const { scrollY } = useViewportScroll();
-
   const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
@@ -118,15 +118,13 @@ const Mobile = props => {
           transition={{ type: "easeOut", duration: 1.5, delay: .3 }}
           style={{position: "absolute", top: "0px"}}
           >
-        
           <Image
             style={{ width: "414px", position: "absolute", top: "271px" }}
             imageName="carGroup"
           ></Image>
         </motion.div>
       </div>
-      { scrollProgress > 220 ? 
-      <div id="section-two" className="sal-animate">
+      <div id="section-two">
         <h1
           style={{
             position: "absolute",
@@ -205,8 +203,8 @@ const Mobile = props => {
             <LeftArrow
               onClick={() =>
                 props.vehicleIndex !== 0
-                  ? props.setVehicleIndex(props.vehicleIndex - 1)
-                  : props.setVehicleIndex(props.vehicles.length - 1)
+                  ? props.setVehicleIndex([props.vehicleIndex - 1, true])
+                  : props.setVehicleIndex([props.vehicles.length - 1, true])
               }
               style={{
                 position: "absolute",
@@ -220,8 +218,8 @@ const Mobile = props => {
             <RightArrow
               onClick={() =>
                 props.vehicles[props.vehicleIndex + 1]
-                  ? props.setVehicleIndex(props.vehicleIndex + 1)
-                  : props.setVehicleIndex(0)
+                  ? props.setVehicleIndex([props.vehicleIndex + 1, true])
+                  : props.setVehicleIndex([0, true])
               }
               style={{
                 position: "absolute",
@@ -298,9 +296,8 @@ const Mobile = props => {
           />
         </div>
       </div>
-      : null 
-      }
-      <div id="section-three" className="sal-animate">
+      
+      <div id="section-three">
         <div>
           <h1
             style={{
