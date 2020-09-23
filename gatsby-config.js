@@ -4,6 +4,7 @@ module.exports = {
     description: `Applicant project for Reform Collective.`,
     author: `Jarom Bridges`
   },
+  pathPrefix: "/ref-coll-eleanor",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -47,6 +48,7 @@ module.exports = {
     `gatsby-image`,
     `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
+    `gh-pages`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
