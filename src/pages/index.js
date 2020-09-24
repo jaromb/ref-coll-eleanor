@@ -44,7 +44,8 @@ const IndexPage = () => {
       window.removeEventListener("resize", updateDimensions)
       clearTimeout(simulateLoading)
     }
-  }, [])
+  }
+  , [])
 
   const updateDimensions = () => {
     let windowWidth = typeof window !== undefined ? window.innerWidth : 0
