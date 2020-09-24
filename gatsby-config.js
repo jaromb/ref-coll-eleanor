@@ -14,13 +14,13 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `fonts`,
-        path: `${__dirname}/public/static/fonts`
-      }
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: `fonts`,
+    //     path: `${__dirname}/public/fonts`
+    //   }
+    // },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
