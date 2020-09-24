@@ -12,7 +12,10 @@ import Image from "./image.js"
 
 // import Header from "./header"
 import "./layout.css"
-import "../../static/fonts/fonts.css"
+import "../../public/static/fonts/fonts.css"
+
+// import "../../static/fonts/fonts.css"
+
 
 
 const Layout = ({ children }) => {

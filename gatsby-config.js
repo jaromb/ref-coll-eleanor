@@ -14,21 +14,12 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "fonts",
-    //     path: `${__dirname}/public/static/fonts`
-    //   }
-    // },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: "gatsby-source-filesystem",
       options: {
-        custom: {
-          families: ["Bebas, Eina03"],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
+        name: "fonts",
+        path: `${__dirname}/public/static/fonts`
+      }
     },
     {
       resolve: "gatsby-plugin-react-svg",
