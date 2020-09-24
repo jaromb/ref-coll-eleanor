@@ -1,0 +1,11 @@
+  @font-face {
+    font-family: Bebas;
+    src: url("BebasNeue-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Eina03;
+    src: url("Eina03-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+ 
