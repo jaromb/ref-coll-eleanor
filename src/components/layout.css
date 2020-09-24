@@ -19,6 +19,14 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+@font-face {
+  font-family: Bebas;
+  src: url("../../static/fonts/BebasNeue-Regular.ttf") type("truetype");
+}
+@font-face {
+  font-family: Eina03;
+  src: url("../../static/fonts/Eina03-Regular.ttf") type("truetype");
+}
 article,
 aside,
 details,
@@ -71,9 +79,7 @@ strong {
 dfn {
   font-style: italic;
 }
-/* div {
 
-} */
 .blurred {
   filter: blur(70.3302px)
 }

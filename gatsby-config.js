@@ -17,10 +17,19 @@ module.exports = {
     // {
     //   resolve: "gatsby-source-filesystem",
     //   options: {
-    //     name: `fonts`,
-    //     path: `${__dirname}/public/fonts`
+    //     name: "fonts",
+    //     path: `${__dirname}/public/static/fonts`
     //   }
     // },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Bebas, Eina03"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

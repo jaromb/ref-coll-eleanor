@@ -5,6 +5,7 @@ import Desktop from "../components/content/desktop"
 import Loader from "../components/content/loader"
 
 import SEO from "../components/seo"
+import "../../public/static/fonts/fonts.css"
 
 
 const IndexPage = () => {
